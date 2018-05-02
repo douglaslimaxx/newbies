@@ -9,6 +9,8 @@ echo -n "Entre com a senha: "
 # Recebe da entrada a senha do usuário
 read senha;
 
+echo `echo $senha | grep -c "[a-z]"`
+
 #variáveis de verificação
 contem_8=$false
 contem_letra_numeros=$false
