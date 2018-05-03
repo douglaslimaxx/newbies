@@ -1,6 +1,6 @@
 #!/bin/bash
 # Douglas Pereira de Lima - 117110636
-# Exercício 4
+# Exercicio 4
 
 
 # Imprime a mensagem
