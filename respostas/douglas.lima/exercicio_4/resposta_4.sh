@@ -1,34 +1,28 @@
 #!/bin/bash
 # Douglas Pereira de Lima - 117110636
 # Exercício 4
-#
+
 
 # Imprime a mensagem
 echo -n "Entre com a senha: "
 
-# Recebe da entrada a senha do usuário
+# Recebe da entrada a senha do usuario
 read senha;
 
-echo `echo $senha | grep -c "[a-z]"`
-
-#variáveis de verificação
-contem_8=$false
-contem_letra_numeros=$false
-contem_maiuscula=$false
-
-tamanho=${#senha}
-
-if [ $tamanho -ge 8 ]
+# Verifica se a senha tem tamanho menor que 8
+if [[ ${#senha} -lt 8 ]]
 then
-	contem_8=$true
-	echo $"A senha contém tamanho 8 ou mais"
+	echo 'Senha insegura! A senha deve ter no minimo 8 caracteres'
+# Verifica se a não senha tem algum numero
+elif [[ !($senha =~ .*[0-9].*) ]]
+then
+	echo 'Senha insegura! A senha deve conter letras e numeros'
+# Verifica se a senha não tem alguma letra maiuscula
+elif [[ !($senha =~ .*[A-Z].*) ]]
+then
+	echo 'Senha insegura! A senha deve conter pelo menos uma letra maiuscula'
+# Caso nenhum caso acima seja verdade, a senha inserida é segura
+else
+	echo 'Senha segura! :)'
 fi
-
-#laço que percorre a senha para fazer verificações
-
-
-#if [ $contem_8 ]
-#then	
-#fi
-
 
