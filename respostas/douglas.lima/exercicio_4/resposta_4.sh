@@ -13,12 +13,12 @@ read senha;
 if [[ ${#senha} -lt 8 ]]
 then
 	echo 'Senha insegura! A senha deve ter no minimo 8 caracteres'
-# Verifica se a não senha tem algum numero
-elif [[ !($senha =~ .*[0-9].*) ]]
+# Verifica se a senha não tem algum numero
+elif [[ !($senha =~ [0-9]) ]]
 then
 	echo 'Senha insegura! A senha deve conter letras e numeros'
 # Verifica se a senha não tem alguma letra maiuscula
-elif [[ !($senha =~ .*[A-Z].*) ]]
+elif [[ !($senha =~ [A-Z]) ]]
 then
 	echo 'Senha insegura! A senha deve conter pelo menos uma letra maiuscula'
 # Caso nenhum caso acima seja verdade, a senha inserida é segura
